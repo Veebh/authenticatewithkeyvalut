@@ -1,0 +1,8 @@
+.vs/*
+.vs*
+*.vs*
+*/.vs/*
+*.dll
+*.pdb
+*/bin/*
+*/obj/*
