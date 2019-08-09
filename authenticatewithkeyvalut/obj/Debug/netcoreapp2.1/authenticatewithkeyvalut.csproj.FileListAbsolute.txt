@@ -2,7 +2,6 @@ C:\Users\Administrator\source\repos\authenticatewithkeyvalut\authenticatewithkey
 C:\Users\Administrator\source\repos\authenticatewithkeyvalut\authenticatewithkeyvalut\bin\Debug\netcoreapp2.1\authenticatewithkeyvalut.runtimeconfig.json
 C:\Users\Administrator\source\repos\authenticatewithkeyvalut\authenticatewithkeyvalut\bin\Debug\netcoreapp2.1\authenticatewithkeyvalut.runtimeconfig.dev.json
 C:\Users\Administrator\source\repos\authenticatewithkeyvalut\authenticatewithkeyvalut\bin\Debug\netcoreapp2.1\authenticatewithkeyvalut.dll
-C:\Users\Administrator\source\repos\authenticatewithkeyvalut\authenticatewithkeyvalut\obj\Debug\netcoreapp2.1\authenticatewithkeyvalut.csprojAssemblyReference.cache
 C:\Users\Administrator\source\repos\authenticatewithkeyvalut\authenticatewithkeyvalut\obj\Debug\netcoreapp2.1\authenticatewithkeyvalut.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\source\repos\authenticatewithkeyvalut\authenticatewithkeyvalut\obj\Debug\netcoreapp2.1\authenticatewithkeyvalut.RazorAssemblyInfo.cache
 C:\Users\Administrator\source\repos\authenticatewithkeyvalut\authenticatewithkeyvalut\obj\Debug\netcoreapp2.1\authenticatewithkeyvalut.RazorAssemblyInfo.cs

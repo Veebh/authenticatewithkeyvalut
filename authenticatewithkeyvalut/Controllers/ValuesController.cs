@@ -21,6 +21,7 @@ namespace authenticatewithkeyvalut.Controllers
             string Message = "Your application description page.";
             int retries = 0;
             bool retry = false;
+            System.Diagnostics.Trace.TraceError("Logs coming");
             try
             {
                 Log.Write(Serilog.Events.LogEventLevel.Information, "Serilog --> Get -- >Values Controller");
