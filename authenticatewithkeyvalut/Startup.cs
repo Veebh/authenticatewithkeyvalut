@@ -9,6 +9,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using Serilog;
+using Serilog;
+using Serilog.Events;
 
 namespace authenticatewithkeyvalut
 {
@@ -34,6 +37,8 @@ namespace authenticatewithkeyvalut
             {
                 app.UseDeveloperExceptionPage();
             }
+            //app.UseSerilogRequestLogging(); // <-- Add this line
+            // <-- Add this line
 
             app.UseMvc();
         }

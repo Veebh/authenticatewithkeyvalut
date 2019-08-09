@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.KeyVault;
 using Microsoft.Azure.KeyVault.Models;
 using Microsoft.Azure.Services.AppAuthentication;
+using Serilog;
 
 namespace authenticatewithkeyvalut.Controllers
 {
@@ -22,12 +23,14 @@ namespace authenticatewithkeyvalut.Controllers
             bool retry = false;
             try
             {
+                Log.Write(Serilog.Events.LogEventLevel.Information, "Serilog --> Get -- >Values Controller");
                 /* The next four lines of code show you how to use AppAuthentication library to fetch secrets from your key vault */
                 AzureServiceTokenProvider azureServiceTokenProvider = new AzureServiceTokenProvider();
                 KeyVaultClient keyVaultClient = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(azureServiceTokenProvider.KeyVaultTokenCallback));
                 var secret = await keyVaultClient.GetSecretAsync("https://veebhssecrets.vault.azure.net/secrets/firstKey")
                         .ConfigureAwait(false);
                 Message = secret.Value;
+                Log.Write(Serilog.Events.LogEventLevel.Information, "Serilog --> Get -- >Value "+ Message);
             }
             /* If you have throttling errors see this tutorial https://docs.microsoft.com/azure/key-vault/tutorial-net-create-vault-azure-web-app */
             /// <exception cref="KeyVaultErrorException">

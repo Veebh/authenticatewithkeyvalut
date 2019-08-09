@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.1",
-    "signature": "9e59a00612bcdf7515ad74201f7aea6547849c5a"
+    "signature": "fadd1b6591b064ecd0a206ee32b3d27f6f7c3b91"
   },
   "compilationOptions": {
     "defines": [
@@ -28,7 +28,10 @@
           "Microsoft.AspNetCore.Razor.Design": "2.1.2",
           "Microsoft.Azure.KeyVault": "3.0.4",
           "Microsoft.Azure.Services.AppAuthentication": "1.3.0",
-          "Microsoft.NETCore.App": "2.1.0"
+          "Microsoft.NETCore.App": "2.1.0",
+          "Serilog": "2.8.0",
+          "Serilog.AspNetCore": "2.1.1",
+          "Serilog.Sinks.Console": "3.1.1"
         },
         "runtime": {
           "authenticatewithkeyvalut.dll": {}
@@ -413,6 +416,70 @@
             "rid": "ubuntu.16.10-x64",
             "assetType": "native"
           }
+        }
+      },
+      "Serilog/2.8.0": {
+        "dependencies": {
+          "System.Collections.NonGeneric": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Serilog.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.8.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Serilog.dll": {}
+        }
+      },
+      "Serilog.AspNetCore/2.1.1": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Hosting.Abstractions": "2.1.1",
+          "Microsoft.Extensions.DependencyInjection": "2.1.1",
+          "Microsoft.Extensions.Logging": "2.1.1",
+          "Serilog": "2.8.0",
+          "Serilog.Extensions.Logging": "2.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Serilog.AspNetCore.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.1.1.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Serilog.AspNetCore.dll": {}
+        }
+      },
+      "Serilog.Extensions.Logging/2.0.0": {
+        "dependencies": {
+          "Microsoft.Extensions.Logging": "2.1.1",
+          "Serilog": "2.8.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/Serilog.Extensions.Logging.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/Serilog.Extensions.Logging.dll": {}
+        }
+      },
+      "Serilog.Sinks.Console/3.1.1": {
+        "dependencies": {
+          "Serilog": "2.8.0",
+          "System.Console": "4.3.0",
+          "System.Runtime.InteropServices": "4.3.0",
+          "System.Runtime.InteropServices.RuntimeInformation": "4.3.0"
+        },
+        "runtime": {
+          "lib/netcoreapp1.1/Serilog.Sinks.Console.dll": {
+            "assemblyVersion": "3.1.1.0",
+            "fileVersion": "3.1.1.0"
+          }
+        },
+        "compile": {
+          "lib/netcoreapp1.1/Serilog.Sinks.Console.dll": {}
         }
       },
       "System.Diagnostics.Process/4.3.0": {
@@ -3581,6 +3648,34 @@
       "sha512": "sha512-leXiwfiIkW7Gmn7cgnNcdtNAU70SjmKW3jxGj1iKHOvdn0zRWsgv/l2OJUO5zdGdiv2VRFnAsxxhDgMzofPdWg==",
       "path": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl/4.3.2",
       "hashPath": "runtime.ubuntu.16.10-x64.runtime.native.system.security.cryptography.openssl.4.3.2.nupkg.sha512"
+    },
+    "Serilog/2.8.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-zjuKXW5IQws43IHX7VY9nURsaCiBYh2kyJCWLJRSWrTsx/syBKHV8MibWe2A+QH3Er0AiwA+OJmO3DhFJDY1+A==",
+      "path": "serilog/2.8.0",
+      "hashPath": "serilog.2.8.0.nupkg.sha512"
+    },
+    "Serilog.AspNetCore/2.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-euuzaDEF8RuTszbqZnYYOm15bGKm0ID3Vaj++sDhmxeL79a8yRemhv2Y8knjvqoOatIpN7Cqd6Jma0A+Pk+V7g==",
+      "path": "serilog.aspnetcore/2.1.1",
+      "hashPath": "serilog.aspnetcore.2.1.1.nupkg.sha512"
+    },
+    "Serilog.Extensions.Logging/2.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-JAh1vHmbiwDAjA9VmUQjAXvlGm+vDv8usarajlkx7Arm6Zai+CPY4naE4N9M3Eh520wY5GmIWpM+7zmfMbdTOw==",
+      "path": "serilog.extensions.logging/2.0.0",
+      "hashPath": "serilog.extensions.logging.2.0.0.nupkg.sha512"
+    },
+    "Serilog.Sinks.Console/3.1.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-56mI5AqvyF/i/c2451nvV71kq370XOCE4Uu5qiaJ295sOhMb9q3BWwG7mWLOVSnmpWiq0SBT3SXfgRXGNP6vzA==",
+      "path": "serilog.sinks.console/3.1.1",
+      "hashPath": "serilog.sinks.console.3.1.1.nupkg.sha512"
     },
     "System.Diagnostics.Process/4.3.0": {
       "type": "package",
