@@ -47,11 +47,9 @@ namespace authenticatewithkeyvalut.Controllers
                 Message += "Thumbprint : ";
                 Message += certFromCertificate.Thumbprint + Environment.NewLine;
                 Message += "PublicKey : ";
-                Message += certFromCertificate.PublicKey + Environment.NewLine;
-                Message += "PrivateKey : ";
-                Message += certFromCertificate.PrivateKey + Environment.NewLine;
+                Message += certFromCertificate.PublicKey.Key + Environment.NewLine;
                 Message += "IssuerName : ";
-                Message += certFromCertificate.IssuerName + Environment.NewLine;
+                Message += certFromCertificate.IssuerName.Name + Environment.NewLine;
             }
             /* If you have throttling errors see this tutorial https://docs.microsoft.com/azure/key-vault/tutorial-net-create-vault-azure-web-app */
             /// <exception cref="KeyVaultErrorException">
