@@ -25,14 +25,14 @@ namespace authenticatewithkeyvalut.Controllers
             System.Diagnostics.Trace.TraceError("Logs coming");
             try
             {
-                Log.Write(Serilog.Events.LogEventLevel.Information, "Serilog --> Get -- >Values Controller");
+                Log.Write(Serilog.Events.LogEventLevel.Information, " --> Get -- >Values Controller");
                 /* The next four lines of code show you how to use AppAuthentication library to fetch secrets from your key vault */
                 AzureServiceTokenProvider azureServiceTokenProvider = new AzureServiceTokenProvider();
                 KeyVaultClient keyVaultClient = new KeyVaultClient(new KeyVaultClient.AuthenticationCallback(azureServiceTokenProvider.KeyVaultTokenCallback));
                 var secret = await keyVaultClient.GetSecretAsync("https://veebhssecrets.vault.azure.net/secrets/firstKey")
                         .ConfigureAwait(false);
                 Message = secret.Value;
-                Log.Write(Serilog.Events.LogEventLevel.Information, "Serilog --> Get -- >Value "+ Message);
+                Log.Write(Serilog.Events.LogEventLevel.Information, " --> Get -- >Value "+ Message);
                 SecretBundle secretBundle = await keyVaultClient.GetSecretAsync("https://veebhssecrets.vault.azure.net/certificates/testpfx/de1d093ccf0d48fa865977a8869b5bc5");
                 //X509Certificate2 certificate = new X509Certificate2(Convert.FromBase64String(secretBundle.Value));
                 //Message += Environment.NewLine + certificate.FriendlyName + Environment.NewLine + certificate.IssuerName;
@@ -45,7 +45,7 @@ namespace authenticatewithkeyvalut.Controllers
              
             catch (KeyVaultErrorException keyVaultException)
             {
-                Message = keyVaultException.Message;
+                Message = "Error Occurred";
             }
             return Ok(Message);
         }
