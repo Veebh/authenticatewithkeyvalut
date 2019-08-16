@@ -42,6 +42,16 @@ namespace authenticatewithkeyvalut.Controllers
                  "csr : "+string.Join(" ",secretBundle.Cer )+ Environment.NewLine+
                 "X509Thumbprint : " + string.Join(" ", secretBundle .X509Thumbprint)+ Environment.NewLine;
                 X509Certificate2 certFromCertificate = new X509Certificate2(secretBundle.Cer);
+                Message += "FriendlyName : ";
+                Message += certFromCertificate.FriendlyName+Environment.NewLine;
+                Message += "Thumbprint : ";
+                Message += certFromCertificate.Thumbprint + Environment.NewLine;
+                Message += "PublicKey : ";
+                Message += certFromCertificate.PublicKey + Environment.NewLine;
+                Message += "PrivateKey : ";
+                Message += certFromCertificate.PrivateKey + Environment.NewLine;
+                Message += "IssuerName : ";
+                Message += certFromCertificate.IssuerName + Environment.NewLine;
             }
             /* If you have throttling errors see this tutorial https://docs.microsoft.com/azure/key-vault/tutorial-net-create-vault-azure-web-app */
             /// <exception cref="KeyVaultErrorException">
