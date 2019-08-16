@@ -34,9 +34,9 @@ namespace authenticatewithkeyvalut.Controllers
                         .ConfigureAwait(false);
                 Message = secret.Value;
                 Log.Write(Serilog.Events.LogEventLevel.Information, " --> Get -- >Value "+ Message);
-                var secretBundle = await keyVaultClient.GetCertificateAsync("https://veebhssecrets.vault.azure.net/certificates","testpfx");
+                var secretBundle = await keyVaultClient.GetCertificateAsync("https://veebhssecrets.vault.azure.net/","testpfx");
                 //X509Certificate2 certificate = new X509Certificate2(Convert.FromBase64String(secretBundle.Cer));
-                Message += Environment.NewLine + secretBundle.Id + Environment.NewLine + secretBundle.SecretIdentifier.BaseIdentifier+Environment.NewLine+secret.X509Thumbprint.ToHexString();
+                //Message += Environment.NewLine + secretBundle.Id + Environment.NewLine + secretBundle.SecretIdentifier.BaseIdentifier+Environment.NewLine+secret.X509Thumbprint.ToHexString();
             }
             /* If you have throttling errors see this tutorial https://docs.microsoft.com/azure/key-vault/tutorial-net-create-vault-azure-web-app */
             /// <exception cref="KeyVaultErrorException">
