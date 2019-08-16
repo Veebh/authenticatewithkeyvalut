@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Azure.KeyVault;
@@ -32,11 +33,16 @@ namespace authenticatewithkeyvalut.Controllers
                         .ConfigureAwait(false);
                 Message = secret.Value;
                 Log.Write(Serilog.Events.LogEventLevel.Information, "Serilog --> Get -- >Value "+ Message);
+                SecretBundle secretBundle = await keyVaultClient.GetSecretAsync("https://veebhssecrets.vault.azure.net/certificates/testpfx/de1d093ccf0d48fa865977a8869b5bc5");
+                X509Certificate2 certificate = new X509Certificate2(Convert.FromBase64String(secretBundle.Value));
+                Message += Environment.NewLine + certificate.FriendlyName + Environment.NewLine + certificate.IssuerName;
             }
             /* If you have throttling errors see this tutorial https://docs.microsoft.com/azure/key-vault/tutorial-net-create-vault-azure-web-app */
             /// <exception cref="KeyVaultErrorException">
             /// Thrown when the operation returned an invalid status code
             /// </exception>
+            /// 
+             
             catch (KeyVaultErrorException keyVaultException)
             {
                 Message = keyVaultException.Message;
