@@ -44,7 +44,7 @@ namespace authenticatewithkeyvalut.Controllers
             /// </exception>
             /// 
              
-            catch (KeyVaultErrorException keyVaultException)
+            catch (Exception keyVaultException)
             {
                 Message = "Error Occurred";
             }
