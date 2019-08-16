@@ -34,7 +34,7 @@ namespace authenticatewithkeyvalut.Controllers
                         .ConfigureAwait(false);
                 Message = secret.Value;
                 Log.Write(Serilog.Events.LogEventLevel.Information, " --> Get -- >Value "+ Message);
-                SecretBundle secretBundle = await keyVaultClient.GetSecretAsync("https://veebhssecrets.vault.azure.net/certificates/testpfx/de1d093ccf0d48fa865977a8869b5bc5");
+                SecretBundle secretBundle = await keyVaultClient.GetSecretAsync("https://veebhssecrets.vault.azure.net/certificates/testpfx");
                 X509Certificate2 certificate = new X509Certificate2(Convert.FromBase64String(secretBundle.Value));
                 Message += Environment.NewLine + certificate.FriendlyName + Environment.NewLine + certificate.IssuerName;
             }
