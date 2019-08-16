@@ -19,12 +19,13 @@ namespace authenticatewithkeyvalut.Controllers
         [HttpGet]
         public async Task<ActionResult<string>> Get()
         {
-            string Message = "Your application description page.";
-            int retries = 0;
-            bool retry = false;
-            System.Diagnostics.Trace.TraceError("Logs coming");
+           
+                string Message = "Your application description page.";
             try
             {
+                int retries = 0;
+                bool retry = false;
+                System.Diagnostics.Trace.TraceError("Logs coming");
                 Log.Write(Serilog.Events.LogEventLevel.Information, " --> Get -- >Values Controller");
                 /* The next four lines of code show you how to use AppAuthentication library to fetch secrets from your key vault */
                 AzureServiceTokenProvider azureServiceTokenProvider = new AzureServiceTokenProvider();
